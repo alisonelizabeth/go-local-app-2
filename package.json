@@ -1,0 +1,13 @@
+{
+	"name": "goLocal",
+	"version": "0.0.0",
+	"description": "An application to find and share local produce",
+	"author": "Alison Miller",
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"devDependencies": {
+		"express": "~3"
+	}
+}

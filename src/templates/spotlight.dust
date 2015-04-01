@@ -1,0 +1,18 @@
+<div>
+    <div>
+        <img src="{?placePhoto}{placePhoto.url}{:else}images/placeholder.png{/placePhoto}" alt="{placePhoto.name}">
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-md-10">
+                <p>{placeName}</p>
+                <p>{address}</p>
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true">{?likes}{likes}{:else}0{/likes}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
