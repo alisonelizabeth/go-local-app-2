@@ -1,10 +1,10 @@
 define([
   'underscore',
   'marionette',
-  'home/controller',
+  'views/PlaceCollection',
   'models/Place',
   'collections/Places'
-  ], function (_, Marionette, HomeView, Place, Places) {
+  ], function (_, Marionette, PlaceCollectionView, Place, Places) {
   var Router = Marionette.AppRouter.extend({
     routes: {
       '': 'home'
@@ -20,12 +20,10 @@ define([
       query.descending('createdAt');
       query.find({
         success:function(results){
-          console.log(results);
-          _.each(results, function(result){
-            var homeView = new HomeView();
-            homeView.render(result);
-          });
-      },
+          var placeCollection = new Places(results);
+          console.log(placeCollection);
+          var placeCollectionView = new PlaceCollectionView({collection: placeCollection});
+        },
         error: function(results, error){
           console.log(error.description)
         }

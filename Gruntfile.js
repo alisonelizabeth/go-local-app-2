@@ -28,7 +28,6 @@ module.exports = function(grunt) {
         }
       }
     },
-
     clean: {
       templates: ['./dist/compiled-templates.js']
     }

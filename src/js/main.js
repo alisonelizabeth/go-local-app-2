@@ -28,6 +28,9 @@ require.config({
         deps: ['jquery', 'underscore', 'backbone'],
         exports: 'Marionette'
     },
+    dustMarionette: {
+        deps: ['marionette']
+    },
     'dustjs-linkedin': {
         exports: 'dust'
     }
@@ -35,12 +38,12 @@ require.config({
 });
 
 require(['marionette', 'parse', 'router', 'templates'], function (Marionette, Parse, AppRouter) {
-    var MyApp = new Marionette.Application();
+    var App = new Marionette.Application();
     Parse.initialize('odceeKZIPEFi25d3RsOWBQqKz6QWTqJ1cckCkTnd', 'PwniGhD9YaeJgeBJQBdPTgPcTUfHdR5zANaNyfOE');
-    MyApp.on('start', function() {
+    App.on('start', function() {
 	  	var router = new AppRouter();
 	  	Backbone.history.start();
 	});
  
-    MyApp.start({});
+    App.start({});
 });
