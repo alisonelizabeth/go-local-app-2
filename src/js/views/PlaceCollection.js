@@ -1,15 +1,24 @@
 define([
-  'underscore',
-  'backbone',
+  'jquery',
   'marionette',
-  'views/PlaceItem'],
-  function(_, Backbone, Marionette, PlaceItemView) {
+  'backbone',
+  'views/PlaceItem',
+  'templates',
+  'dustMarionette'],
+  function($, Marionette, Backbone, PlaceItemView) {
     var PlaceCollectionView = Backbone.Marionette.CollectionView.extend({
-        itemView: PlaceItemView,
-        initialize: function(){
-          console.log('init CollectionView');
-          console.log(this);
+        childView: PlaceItemView,
+
+        initialize: function(options){
+          console.log('init collection view');
+          console.log(options);
         }
+
+        // getChildView: function(item){
+        //   console.log('get view');
+        //   console.log(item);
+        //   return PlaceItemView;
+        // }
     });
     return PlaceCollectionView;
   });

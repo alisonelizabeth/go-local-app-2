@@ -1,13 +1,8 @@
-define([
-	'underscore',
-	'backbone',
-	'marionette',
-	'dustjs-linkedin',
-	'dustMarionette'],
-  function(_, Backbone, Marionette) {
-    var PlaceItemView = Backbone.Marionette.ItemView.extend({
+define(['marionette'],
+  function(Marionette) {
+    var PlaceItemView = Marionette.ItemView.extend({
 	  template: 'spotlight',
-	  initialize: function(){
+	  initialize:function(){
 	  	console.log('init item view');
 	  }
 	});

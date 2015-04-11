@@ -1,12 +1,12 @@
-<div>
+<div data-action="view:place">
     <div>
         <img src="{?placePhoto}{placePhoto.url}{:else}images/placeholder.png{/placePhoto}" alt="{placePhoto.name}">
     </div>
     <div>
         <div class="row">
             <div class="col-md-10">
-                <p>{placeName}</p>
-                <p>{address}</p>
+                {?placeName}<p>{placeName}</p>{/placeName}
+                {?address}<p>{address}</p>{/address}
             </div>
             <div class="col-md-2">
                 <button type="button" class="btn btn-default" aria-label="Left Align">
