@@ -18,6 +18,8 @@ app.get('/', function(req, res){
 
 app.use('/public/js/vendor', _static(path.join(process.cwd(), 'node_modules')));
 app.use('/public/js', _static(path.join(process.cwd(), 'src/js')));
+app.use('/public/css', _static(path.join(process.cwd(), 'src/less')));
+app.use('/public/img', _static(path.join(process.cwd(), 'src/images')));
 app.use('/public/js', _static(path.join(process.cwd(), 'dist')));
 
 app.listen(3000, console.log.bind(null, 'Running at Port 3000'));

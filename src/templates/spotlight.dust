@@ -1,6 +1,6 @@
-<div data-action="view:place">
+<div class="col-md-4" data-action="view:place">
     <div>
-        <img src="{?placePhoto}{placePhoto.url}{:else}images/placeholder.png{/placePhoto}" alt="{placePhoto.name}">
+        <img class="img-responsive" src="{?placePhoto}{placePhoto.url}{:else}images/placeholder.png{/placePhoto}" alt="{placePhoto.name}">
     </div>
     <div>
         <div class="row">

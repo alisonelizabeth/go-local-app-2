@@ -8,7 +8,7 @@ require.config({
     dustMarionette: '/public/js/vendor/backbone.marionette.dust/src/backbone.marionette.dust',
     templates: '/public/js/compiled-templates-amd',
     'dustjs-linkedin': '/public/js/vendor/dustjs-linkedin/dist/dust-core',
-    babysitter: '/public/js/vendor/backbone.babysitter/lib/backbone.babysitter'
+    radio: '/public/js/vendor/backbone.radio/src/backbone.radio'
   },
   shim: {
   	parse: {
@@ -26,7 +26,7 @@ require.config({
         exports: 'Backbone'
     },
     marionette: {
-        deps: ['jquery', 'underscore', 'backbone', 'babysitter'],
+        deps: ['jquery', 'underscore', 'backbone'],
         exports: 'Marionette'
     },
     dustMarionette: {

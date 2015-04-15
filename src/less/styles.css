@@ -1,0 +1,29 @@
+/* General styles */
+body {
+  padding: 0;
+  margin: 0;
+  background: #EEEEEE;
+}
+* {
+  vertical-align: top;
+}
+/* Typography */
+h1 {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+#main {
+  background: url(/public/img/mural.jpg) no-repeat center center;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 443px;
+}
