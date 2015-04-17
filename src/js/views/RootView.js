@@ -1,9 +1,9 @@
 define([
 	'marionette',
 	'views/Header',
-	'views/Footer'
-],
-  function(Marionette, HeaderView, FooterView) {
+	'views/Footer',
+	'channel'],
+  function(Marionette, HeaderView, FooterView, channel) {
     var RootView = Marionette.LayoutView.extend({
     	el: 'body',
     	regions: {
@@ -12,20 +12,13 @@ define([
 	  		footer: '#footer'
 	  	},
 	  	initialize: function(){
-	  		console.log('init root view');
+	  		var self = this;
 	  		this.getRegion('header').show(new HeaderView());
 		    this.getRegion('footer').show(new FooterView());
-		  	// Radio.channel('root').comply('set:content',function(contentView) {
-		   	//      this.getRegion('content').show(contentView);
-		   	//  });
+		  	channel.comply('set:content',function(ContentView) {
+		  		self.getRegion('content').show(new ContentView());
+		   	});
 		}
-		// onBeforeShow: function(){
-		// 	console.log('onBeforeShow');
-		// 	this.getRegion('header').show(new HeaderView());
-		//     this.getRegion('footer').show(new FooterView());
-  //   		// this.getRegion('content').show(new IndexView());
-		// }
-
 	});
 	return RootView;
   });

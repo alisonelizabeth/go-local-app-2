@@ -30,12 +30,22 @@ module.exports = (function() {
     body_0.__dustBody = !0;
     return body_0;
   })();
+  // home.dust
+  (function() {
+    dust.register("home", body_0);
+
+    function body_0(chk, ctx) {
+      return chk.w("<div id=\"banner\"></div><div id=\"spotlight\"></div>");
+    }
+    body_0.__dustBody = !0;
+    return body_0;
+  })();
   // index.dust
   (function() {
     dust.register("index", body_0);
 
     function body_0(chk, ctx) {
-      return chk.w("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>goLocal</title><meta name=\"description\" content=\"goLocal\"><meta name=\"author\" content=\"Alison Miller\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><!-- <link rel=\"stylesheet\" href=\"css/styles.css?v=1.0\"> --><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"public/css/styles.css\"><script data-main=\"public/js/main\" src=\"public/js/vendor/requirejs/require.js\"></script></head><body><div class=\"container-fluid\">").p("header", ctx, {}).p("footer", ctx, {}).w("  </div></body></html>");
+      return chk.w("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>goLocal</title><meta name=\"description\" content=\"goLocal\"><meta name=\"author\" content=\"Alison Miller\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><!-- <link rel=\"stylesheet\" href=\"css/styles.css?v=1.0\"> --><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css\"><link rel=\"stylesheet\" href=\"public/css/styles.css\"><script data-main=\"public/js/main\" src=\"public/js/vendor/requirejs/require.js\"></script></head><body><div class=\"container-fluid\"><div id=\"header\"></div><div id=\"main-content\"></div><div id=\"footer\"></div></div></body></html>");
     }
     body_0.__dustBody = !0;
     return body_0;

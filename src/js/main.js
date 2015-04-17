@@ -34,6 +34,9 @@ require.config({
     },
     'dustjs-linkedin': {
         exports: 'dust'
+    },
+    radio: {
+        deps: ['backbone']
     }
   }
 });
