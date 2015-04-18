@@ -59,6 +59,16 @@ define(["dustjs-linkedin"], function(dust) {
     body_0.__dustBody = !0;
     return body_0;
   })();
+  // places.dust
+  (function() {
+    dust.register("places", body_0);
+
+    function body_0(chk, ctx) {
+      return chk.w("<div id=\"places\"></div>");
+    }
+    body_0.__dustBody = !0;
+    return body_0;
+  })();
   // spotlight.dust
   (function() {
     dust.register("spotlight", body_0);
@@ -235,6 +245,27 @@ define(["dustjs-linkedin"], function(dust) {
       return rendered;
     }
   });
+  define("places", function() {
+    return function(locals, callback) {
+      var rendered;
+
+      dust.render("places", locals, function(err, result) {
+        if (typeof callback === "function") {
+          try {
+            callback(err, result);
+          } catch (e) {}
+        }
+
+        if (err) {
+          throw err
+        } else {
+          rendered = result;
+        }
+      });
+
+      return rendered;
+    }
+  });
   define("spotlight", function() {
     return function(locals, callback) {
       var rendered;
@@ -256,5 +287,5 @@ define(["dustjs-linkedin"], function(dust) {
       return rendered;
     }
   });
-  return ["banner", "footer", "header", "home", "index", "place", "spotlight"];
+  return ["banner", "footer", "header", "home", "index", "place", "places", "spotlight"];
 });

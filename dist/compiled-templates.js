@@ -60,6 +60,16 @@ module.exports = (function() {
     body_0.__dustBody = !0;
     return body_0;
   })();
+  // places.dust
+  (function() {
+    dust.register("places", body_0);
+
+    function body_0(chk, ctx) {
+      return chk.w("<div id=\"places\"></div>");
+    }
+    body_0.__dustBody = !0;
+    return body_0;
+  })();
   // spotlight.dust
   (function() {
     dust.register("spotlight", body_0);

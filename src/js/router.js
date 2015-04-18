@@ -4,13 +4,15 @@ define([
   'collections/Places',
   'views/RootView',
   'views/HomeLayout',
+  'views/PlacesLayout',
   'channel'
-  ], function (_, Marionette, Places, RootView, HomeLayoutView, channel) {
+  ], function (_, Marionette, Places, RootView, HomeLayoutView, PlacesLayoutView, channel) {
   var Router = Marionette.AppRouter.extend({
     routes: {
       '': 'home',
       'places': 'showPlaces',
-      'places/:id': 'showPlace'
+      'places/:id': 'showPlace',
+      'places/add': 'addPlace'
     },
     initialize: function(options){
       this.app = options.app;
@@ -23,22 +25,13 @@ define([
     },
     showPlaces: function(){
       console.log('places route');
-      // var self = this;
-
-      // this.places.fetch({
-      //   success: function(places) {
-      //     console.log(places);
-      //     var placeCollection = new Places(places);
-      //     var placeCollectionView = new PlaceCollectionView({collection: placeCollection});
-      //     self.app.mainRegion.show(placeCollectionView);
-      //   },
-      //   error: function(error){
-      //     console.log(error.description);
-      //   }
-      // });
+      channel.command('set:content', PlacesLayoutView);
     },
     showPlace: function(){
       console.log('place route');
+    },
+    addPlace: function(){
+      console.log('add route');
     }
   });
  
